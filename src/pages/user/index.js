@@ -1,0 +1,10 @@
+export { default as LoginPage } from "./loginPage.js";
+export { default as DetailsPage } from "./detailsPage.js";
+export { default as UserDashboard } from "./userDashboard.js";
+export { default as Marketplace } from "./marketplace.js";
+export { default as UpdatePasswordPage } from "./updatePassword.js";
+export { default as ForgotPasswordPage } from "./forgetPassword.js";
+export { default as ReadOnlyDetailsPage } from "./readOnlyDetailPage.js";
+export { default as SignUpPage } from "./signUpPage.js";
+export { default as Files } from "./files.js";
+export { default as Prescription } from "./prescription.js";
