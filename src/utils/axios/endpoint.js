@@ -1,5 +1,5 @@
-// export const BASE_URL = "https://apna-card-backend.onrender.com/";
-export const BASE_URL = "http://161.97.76.102:5000/";
+ export const BASE_URL = "https://apna-card.onrender.com/";
+//export const BASE_URL = "http://161.97.76.102:5000/";
 
 //user
 export const LOGIN = "api/users/login";
