@@ -39,7 +39,7 @@ const GeneratePromoCodes = () => {
     
     const fetchOrganizations = async () => {
     try {
-      const res = await fetch("http://161.97.76.102:5000/api/super-admin/organisation-names", {
+      const res = await fetch("https://apancardbckend.onrender.com/api/super-admin/organisation-names", {
         headers: {
           "Content-Type": "application/json"
         }
@@ -102,7 +102,7 @@ const GeneratePromoCodes = () => {
     }
 
     try {
-      const res = await fetch("http://161.97.76.102:5000/api/super-admin/save-promo-codes", {
+      const res = await fetch("https://apancardbckend.onrender.com/api/super-admin/save-promo-codes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
