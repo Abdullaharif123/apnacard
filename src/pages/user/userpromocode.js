@@ -73,7 +73,7 @@ const UserPromoCodePage = ({ role, loggedInUser }) => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://161.97.76.102:5000/api/user/users");
+      const res = await axios.get("https://apancardbckend.onrender.com/api/user/users");
       setUsers(res.data.payload?.data || []);
     } catch (err) {
       console.error("Error fetching users", err);
@@ -82,7 +82,7 @@ const UserPromoCodePage = ({ role, loggedInUser }) => {
 
   const fetchOrganisations = async () => {
     try {
-      const res = await axios.get("http://161.97.76.102:5000/api/organisation");
+      const res = await axios.get("https://apancardbckend.onrender.com/api/organisation");
       console.log("📬 Orgs Response:", res.data);
       const orgList = res.data.payload?.data || [];
       setOrganisations(orgList);
@@ -94,7 +94,7 @@ const UserPromoCodePage = ({ role, loggedInUser }) => {
   const fetchCategories = async (orgId) => {
     try {
       const res = await axios.get(
-        `http://161.97.76.102:5000/api/organisation/${orgId}/categories`
+        `https://apancardbckend.onrender.com/api/organisation/${orgId}/categories`
       );
       setCategories(res.data.payload?.data || []);
     } catch (err) {
@@ -105,7 +105,7 @@ const UserPromoCodePage = ({ role, loggedInUser }) => {
   const fetchPercentage = async (orgId, catId) => {
     try {
       const res = await axios.get(
-        `http://161.97.76.102:5000/api/organisation/${orgId}/categories/${catId}/percentage`
+        `https://apancardbckend.onrender.com/api/organisation/${orgId}/categories/${catId}/percentage`
       );
       setPercentage(
         res.data.payload?.percentage ||
@@ -160,7 +160,7 @@ const UserPromoCodePage = ({ role, loggedInUser }) => {
 
     try {
       const res = await axios.get(
-        `http://161.97.76.102:5000/api/organisation/${selectedOrganisationId}/promo-codes/unused`
+        `https://apancardbckend.onrender.com/api/organisation/${selectedOrganisationId}/promo-codes/unused`
       );
 
       const promoCode = res.data?.payload?.data?.promoCode;
@@ -201,7 +201,7 @@ const UserPromoCodePage = ({ role, loggedInUser }) => {
 
   const handleSave = async () => {
     try {
-      const res = await axios.post("http://161.97.76.102:5000/api/user-promo-codes", {
+      const res = await axios.post("https://apancardbckend.onrender.com/api/user-promo-codes", {
         userId: selectedUserId,
         organisationId: selectedOrganisationId,
         categoryId: selectedCategoryId,
