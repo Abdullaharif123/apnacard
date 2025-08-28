@@ -17,6 +17,8 @@ const UserDashboard = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { orgId } = useSelector((state) => state.auth);
+  // console.log("🔴 orgId in dashboard:", orgId);
+// console.log("📄 Full auth state:", state.auth);
   const [categories, setCategories] = useState([]);
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
@@ -100,6 +102,8 @@ const UserDashboard = () => {
 
         {/* --- Dynamic Category Cards --- */}
         {categories.map((category, index) => {
+          console.log(category);
+          console.log(index);
           const imageUrl = category.imageUrl ?? "/Profile.jpeg";
           return (
             <Grid item xs={12} sm={4} key={index}>

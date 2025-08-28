@@ -61,6 +61,15 @@ const LoginPage = () => {
       } else if (roleExtractedFromToken === userRoles.USER) {
         navigate("/details");
       }
+      console.log("👉 Dispatching loginSuccess with data:", {
+        accessToken: response.payload.data.accessToken,
+        cardNumber: response.payload.data.cardNumber,
+        orgId: response.payload.data.orgId,
+        userId: response.payload.data.userId,
+        email: response.payload.data.email,
+        firstName: response.payload.data.firstName,
+        lastName: response.payload.data.lastName,
+      });
 
       dispatch(
         loginSuccess({
@@ -68,7 +77,7 @@ const LoginPage = () => {
           cardNumber: response.payload.data.cardNumber,
           role: roleExtractedFromToken,
           isLoggedIn: true,
-          orgId: response.payload.data.orgId,
+          orgId: response.payload.data.orgId || null,
           userId: response.payload.data.userId,
           email: response.payload.data.email,
           firstName: response.payload.data.firstName,
